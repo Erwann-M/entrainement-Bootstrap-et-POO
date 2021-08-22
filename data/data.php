@@ -1,5 +1,6 @@
 <?php
 
+
 class Client {
     public $lastname;
     public $name;
@@ -7,4 +8,6 @@ class Client {
     public $iban;
     public $solde;
     public $formuleCompte;
+
+    
 }
