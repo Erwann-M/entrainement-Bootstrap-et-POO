@@ -9,13 +9,24 @@
         <h1 class="title__form">Vos informations</h1>
         <?php
         if (!empty($_POST['name']) && !empty($_POST['lastname'])) {
+            
             if (empty($_SESSION['lastname']) && empty($_SESSION['name'])) {
 
-                $_SESSION['lastname'] = ucwords($_POST['lastname']);
-                $_SESSION['name'] = ucwords($_POST['name']);
-                $_SESSION['solde'] = 0;
-                $_SESSION['iban'] = getIBAN();
-                $_SESSION['bic'] = getBIC();
+                $newClient = new Client();
+
+                $newClient->name        = ucwords($_POST['name']);
+                $newClient->lastname    = ucwords($_POST['lastname']);
+                $newClient->solde       = 0;
+                $newClient->iban        = getIBAN();
+                $newClient->bic         = getBIC();
+
+                $newClient->cestLaPaye();
+
+                $_SESSION['lastname']   = $newClient->lastname;
+                $_SESSION['name']       = $newClient->name;
+                $_SESSION['solde']      = $newClient->solde;
+                $_SESSION['iban']       = $newClient->iban;
+                $_SESSION['bic']        = $newClient->bic;
             }  
         } 
         
@@ -23,11 +34,13 @@
                 <ul>
                     <li class="title__input"><?= "Nom : " . $_SESSION['lastname'] ?></li>
                     <li class="title__input"><?= "Prenom : " . $_SESSION['name'] ?></li>
-                    <li class="title__input"><?= "Solde : " . $_SESSION['solde'] ?></li>
+                    <li class="title__input"><?= "Solde : <span class=\"solde\">" . $_SESSION['solde'] . "</span> €" ?></li>
                     <li class="title__input"><?= "IBAN : " . $_SESSION['iban'] ?></li>
                     <li class="title__input"><?= "B.I.C : " . $_SESSION['bic'] ?></li>
-                    <li class="title__input"></li>
                 </ul>
+                
+                <button class="btn_valide" id="ajout">Ajouter argent</button>
+                
                 <form action="../tools/deconnection.php" class="btn">
                     <button class="btn__valide">déconnexion</button>
                 </form>
