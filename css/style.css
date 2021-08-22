@@ -13,6 +13,12 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  background-image: url(../img/piggy-bank-2889046_1920.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .page__title {
   text-align: center;
   font-size: 5.5rem;
@@ -32,7 +38,7 @@ html {
 }
 
 .nav__bar {
-  box-shadow: 0px -2px 3px 0px rgb(151, 151, 151);
+  box-shadow: 0 -2px 3px 0 rgb(151, 151, 151);
   display: flex;
   background-color: black;
   justify-content: space-between;
@@ -79,4 +85,79 @@ html {
 
 body {
   background-color: #f6fcff;
+}
+
+.main__index {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__container {
+  border-radius: 10px 20px;
+  background-color: #141115;
+  color: goldenrod;
+  width: 300px;
+  height: 350px;
+  margin: 5% auto;
+}
+
+.title__form {
+  padding: 20px;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.form__section {
+  padding: 20px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  height: 30px;
+  padding: 5px;
+}
+
+.title__input {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
+.btn__valide {
+  border-radius: 5px 10px;
+  width: 50%;
+  padding: 5px;
+  background-color: goldenrod;
+  font-weight: bold;
+  border: none;
+  font-size: 2rem;
+}
+
+.btn__valide:hover {
+  background-color: rgb(214, 178, 87);
+}
+
+.input {
+  border: none;
+  border-radius: 5px 10px;
+  background-color: rgb(211, 186, 124);
+}
+
+.informations {
+  padding: 20px;
+  text-align: center;
+  font-size: 2rem;
 }
